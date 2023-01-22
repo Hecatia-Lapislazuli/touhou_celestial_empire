@@ -1,0 +1,75 @@
+
+Gensokyan_celestial_necrocratic_government = {
+	lock_level_when_selected = yes
+	icon = "necrocratic_government_reform"
+	potential = {
+		is_emperor_of_china = yes 
+		NOT = { has_global_flag = empire_of_china_dismantled }
+		OR = {
+			th_is_or_was_tag = {
+				tag = SEI
+			}
+			have_had_reform = Gensokyan_sei_necrocratic_government
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = Gensokyan_celestial_necrocratic_government
+			}
+		}
+	}
+	allow_normal_conversion = no
+	allow_force_tributary = no
+	valid_for_new_country = no
+	valid_for_nation_designer = no
+	allow_convert = no
+	can_change_primary_culture = no
+
+	modifiers = {
+		global_unrest = -1
+		culture_conversion_cost = -0.17	
+		global_autonomy = -0.05
+		governing_capacity = 500
+
+		prestige = 0.5
+
+		manpower_recovery_speed = -1
+		global_manpower_modifier = -0.75
+		land_forcelimit_modifier = 0.25
+		global_regiment_cost = -0.33
+		global_regiment_recruit_speed = -0.75
+		reinforce_speed = 0.5
+		num_accepted_cultures = -10
+		manpower_in_own_culture_provinces = 0.75
+	}
+
+
+	fixed_rank = 3
+	maintain_dynasty = yes
+
+	custom_attributes = {
+		locked_government_type = yes
+		has_tributaries = yes
+		has_unify_china_cb = yes
+
+		th_gets_manpower_from_battles_and_sieges = yes
+		th_has_necromatic_actions = yes
+		th_no_dev_reduction_from_manpower_exploit = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Leviathan" }
+		custom_attributes = {
+			th_gets_extra_manpower_from_pillaging = yes
+		}
+	}
+	
+	factions = {
+		temples
+		enuchs
+		bureaucrats
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Mandate of Heaven" }
+		has_meritocracy = yes
+		factions = {}
+	}
+}

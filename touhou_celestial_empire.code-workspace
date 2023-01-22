@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../Desktop/Touhou Universalis/TU"
+		},
+		{
+			"path": "../../../../../Desktop/Touhou Universalis/TUAges"
+		},
+		{
+			"path": "../../../../../Desktop/Touhou Universalis/TUGoods"
+		},
+		{
+			"path": "../../../../../Desktop/Touhou Universalis/TUIdeas"
+		}
+	],
+	"settings": {
+		"cwtools.errors.vanilla": false
+	}
+}
