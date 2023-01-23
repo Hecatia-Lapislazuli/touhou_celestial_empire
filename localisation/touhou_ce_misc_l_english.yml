@@ -1,7 +1,7 @@
 ﻿l_english:
- gensokyan_celestial_trial.21.t: "Policy on the Chinese People"
- gensokyan_celestial_trial.21.desc: "TEMP"
- gensokyan_celestial_trial.22.a: "Convert their way of thinking"
- gensokyan_celestial_trial.22.b: "Accept Chinese Culture"
- Gensokyan_east_asian: "Gensokyan Chinese"
+ Gensokyan_east_asian: "Outerworlder Chinese"
  Gensokyan_celestial_necrocratic_government: "Celestial Necrocratic Empire"
+ Gensokyan_celestial_necrocratic_government_desc: "WIP"
+ sinicize_gensokyan_culture_tt: "Every §Y[Root.Culture.GetGroupName]§! province, which is in China, Manchuria, Mongolia, Korea, or Tibet, is owned by [Root.GetName] or its subjects, including Tributaries."
+ th_ce_sinicize_culture_title: "Sinicize our Culture"
+ th_ce_sinicize_culture_desc: "Our culture is our greatest pride. Our language is one of its kind, our traditions and our heritage are the pillars of our society.\nNonetheless, we cannot deny the influence the Chinese language and culture have had on us over the decades - now more than ever. Although not everyone will agree with this decision, it might be worth considering to sinicize our culture in order to create a greater harmony between the [Root.Culture.GetName] and the Chinese in our land." #TODO - something that makes a bit more sense for Gensokyans.

@@ -3,17 +3,14 @@ Gensokyan_celestial_necrocratic_government = {
 	lock_level_when_selected = yes
 	icon = "necrocratic_government_reform"
 	potential = {
-		is_emperor_of_china = yes 
+		th_is_emperor_of_china = yes 
 		NOT = { has_global_flag = empire_of_china_dismantled }
 		OR = {
 			th_is_or_was_tag = {
 				tag = SEI
 			}
 			have_had_reform = Gensokyan_sei_necrocratic_government
-			AND = {
-				is_playing_custom_nation = yes
-				have_had_reform = Gensokyan_celestial_necrocratic_government
-			}
+			have_had_reform = Gensokyan_celestial_necrocratic_government
 		}
 	}
 	allow_normal_conversion = no

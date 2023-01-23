@@ -1,0 +1,167 @@
+country_decisions = {
+	th_ce_sinicize_culture = {
+		potential = {
+			culture_group = Gensokyan_culture
+			OR = { #Is emperor of China, or the capital is near to china
+				th_is_emperor_of_china = yes
+				capital_scope = {
+					OR = {#China, Tibet, Korea, and the Steppes.
+						super_region = china_superregion
+						region = manchuria_region
+						region = mongolia_region
+						region = korea_region
+						region = tibet_region
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			culture_group = ROOT
+			OR = {#China, Tibet, Korea, and the Steppes.z
+				super_region = china_superregion
+				region = manchuria_region
+				region = mongolia_region
+				region = korea_region
+				region = tibet_region
+				#region = indo_china_region
+				#super_region = india_superregion
+				#super_region = east_indies_superregion
+				#super_region = tartary_superregion
+				#super_region = far_east_superregion
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		allow = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = chinese_culture_group_dominates_in_country
+					OR = {
+						dominant_culture = manchu_new
+						dominant_culture = chihan
+						dominant_culture = cantonese
+						dominant_culture = jin
+						dominant_culture = wu
+						dominant_culture = chimin
+						dominant_culture = hakka
+						dominant_culture = gan
+						dominant_culture = xiang
+						dominant_culture = sichuanese
+						dominant_culture = jianghuai
+						dominant_culture = xibei
+						dominant_culture = hubei
+						dominant_culture = zhongyuan
+						dominant_culture = shandong_culture
+						dominant_culture = vietnamese_new
+						dominant_culture = korean_new
+						dominant_culture = tibetan_new
+						dominant_culture = altaic_new
+						dominant_culture = Gensokyan_east_asian
+					}
+				}
+				th_is_emperor_of_china = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = sinicize_gensokyan_culture_tt
+				NOT = {
+					any_province = {
+						culture_group = ROOT
+						NOT = { country_or_subject_holds = ROOT }
+						OR = {#China, Tibet, Korea, and the Steppes.z
+							super_region = china_superregion
+							region = manchuria_region
+							region = mongolia_region
+							region = korea_region
+							region = tibet_region
+							#region = indo_china_region
+							#super_region = india_superregion
+							#super_region = east_indies_superregion
+							#super_region = tartary_superregion
+							#super_region = far_east_superregion
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = { #Sinicize Tibetan
+				limit = {
+					culture_group = Gensokyan_culture
+				}
+				hidden_effect = {
+					every_province = {
+						limit = {
+							OR = {#China, Tibet, Korea, and the Steppes.
+								superregion = china_superregion
+								region = manchuria_region
+								region = mongolia_region
+								region = korea_region
+								region = tibet_region
+								#region = indo_china_region
+								#super_region = india_superregion
+								#super_region = east_indies_superregion
+								#super_region = tartary_superregion
+								#super_region = far_east_superregion
+								AND = {
+									country_or_subject_holds = ROOT
+									OR = {
+										has_owner_culture = yes
+										super_region = tartary_superregion
+									}
+								}
+							}
+							OR = {
+								culture_group = Gensokyan_culture
+								AND = {#Convert the Imperial Cities
+									country_or_subject_holds = ROOT
+									OR = {
+										area = south_jiangsu_area
+										area = hebei_area
+										area = guangdong_area
+									}
+								}
+							}
+						}
+						change_culture = Gensokyan_east_asian
+					}
+					every_country = {
+						limit = {
+							culture_group = Gensokyan_culture
+							capital_scope = {
+								OR = {#China, Tibet, Korea, and the Steppes.
+									super_region = china_superregion
+									region = manchuria_region
+									region = mongolia_region
+									region = korea_region
+									region = tibet_region
+								}
+							}
+						}
+						change_primary_culture = Gensokyan_east_asian
+						# set_ruler_culture = Gensokyan_east_asian
+						# if = {
+						# 	limit = {
+						# 		has_heir = yes
+						# 	}
+						# 	set_heir_culture = Gensokyan_east_asian
+						# }
+					}
+					set_global_flag = sinicized_gensokyan_flag
+				}
+				#Moved to after hidden
+				change_primary_culture = Gensokyan_east_asian
+				#We don't change a Gensokyan's culture
+				# set_ruler_culture = Gensokyan_east_asian
+				# if = {
+				# 	limit = {
+				# 		has_heir = yes
+				# 	}
+				# 	set_heir_culture = Gensokyan_east_asian
+				# }
+			}
+			custom_tooltip = sinicize_culture_ct
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

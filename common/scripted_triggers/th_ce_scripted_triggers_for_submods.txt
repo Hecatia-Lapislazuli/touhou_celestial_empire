@@ -1,0 +1,23 @@
+#This file is for all submodders, who want to add new cultures, technologies, idea groups or buildings 
+#And want to ensure that the missions of the base mod checks the new added features too
+
+th_is_emperor_of_china = {
+	if = {
+		limit = { has_dlc = "Mandate of Heaven" }
+		is_emperor_of_china = yes
+	}
+	else = {
+		OR = {
+			has_reform = Gensokyan_celestial_empire
+			has_reform = Gensokyan_celestial_necrocratic_government
+			has_reform = celestial_empire
+		}
+	}
+}
+th_is_touhou_culture_group = {
+	OR = {
+		culture_group = Gensokyan_culture
+		culture_group = moon_culture
+		culture = Gensokyan_east_asian
+	}
+}
